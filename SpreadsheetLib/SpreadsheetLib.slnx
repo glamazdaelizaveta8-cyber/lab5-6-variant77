@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="MyExcelMAUIApp/MyExcelMAUIApp.csproj" Id="2193413e-1c3c-4a02-82ec-810f9c0b0185" />
+  <Project Path="SpreadsheetLib/SpreadsheetLib.csproj" />
+  <Project Path="TestConsole/TestConsole.csproj" />
+</Solution>

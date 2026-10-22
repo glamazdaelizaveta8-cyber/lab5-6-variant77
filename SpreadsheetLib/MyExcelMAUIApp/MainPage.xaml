@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyExcelMAUIApp.MainPage"
+             Title="Електронна таблиця">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Довідка" Clicked="OnHelpClicked" />
+        <ToolbarItem Text="Про програму" Clicked="OnAboutClicked" />
+    </ContentPage.ToolbarItems>
+
+    <Grid RowDefinitions="Auto,Auto,Auto,*" Padding="8" RowSpacing="6">
+
+        <FlexLayout Grid.Row="0" Wrap="Wrap" JustifyContent="Start">
+            <Button Text="Нова" Clicked="OnNewClicked" Margin="2" />
+            <Button Text="Відкрити" Clicked="OnOpenClicked" Margin="2" />
+            <Button Text="Зберегти" Clicked="OnSaveClicked" Margin="2" />
+            <Button Text="+ Рядок" Clicked="OnAddRowClicked" Margin="2" />
+            <Button Text="− Рядок" Clicked="OnRemoveRowClicked" Margin="2" />
+            <Button Text="+ Стовпець" Clicked="OnAddColumnClicked" Margin="2" />
+            <Button Text="− Стовпець" Clicked="OnRemoveColumnClicked" Margin="2" />
+            <Button Text="Порахувати" Clicked="OnCalculateClicked" Margin="2" />
+            <Button Text="Вийти" Clicked="OnExitClicked" Margin="2" />
+        </FlexLayout>
+
+        <HorizontalStackLayout Grid.Row="1" Spacing="10">
+            <Label Text="ВИРАЗ" VerticalOptions="Center" FontAttributes="Bold" />
+            <Switch x:Name="ModeSwitch" Toggled="OnModeToggled" VerticalOptions="Center" />
+            <Label Text="ЗНАЧЕННЯ" VerticalOptions="Center" FontAttributes="Bold" />
+        </HorizontalStackLayout>
+
+        <Label Grid.Row="2" x:Name="StatusLabel" LineBreakMode="WordWrap"
+           Text="Виберіть клітинку, щоб побачити її вираз і значення." />
+
+        <ScrollView Grid.Row="3" Orientation="Both">
+            <Grid x:Name="SheetGrid" ColumnSpacing="1" RowSpacing="1" />
+        </ScrollView>
+
+    </Grid>
+</ContentPage>
